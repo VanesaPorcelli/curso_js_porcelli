@@ -48,17 +48,13 @@ while (mensaje == 's' || mensaje == 'S') {
             alert('Codigo inexistente');
             break;
 
-    }    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)');
 
-
+    }    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)'); 
+}
 
 gestionarEnvio();
 gestionarPago();
-}
-alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');
-
-
-
+alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');    
 
 
 // FUNCIONES UTILIZADAS
