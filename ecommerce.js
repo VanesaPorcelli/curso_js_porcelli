@@ -47,68 +47,74 @@ while (mensaje == 's' || mensaje == 'S') {
         default:
             alert('Codigo inexistente');
             break;
+    }    
+    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)');
+} 
 
-
-    }    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)'); 
-}
-
-gestionarEnvio();
-gestionarPago();
-alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');    
-
-
-// FUNCIONES UTILIZADAS
-
-function gestionarEnvio() {
-    alert(nombreUsuario + ' Agrega por favor tu método de envío:');
-    let envio = prompt('1-Envío a domicilio ... $1200\n2-retiro en el local ...Gratis!');
-    switch (envio) {
-        case '1':
-            alert('Agregaste Envío a domicilio... $ 1200');
-            sumarTotal(1200);
-            break;
-        case '2':
-            alert('Retirá por nuestro local sin costo adicional!... $ Envío Gratis!');
-            sumarTotal(0);
-            break;
-        default:
-            alert('No entendi la respueta');
-            gestionarEnvio();
-            break;
+    if(total > 0){
+        gestionarEnvio();
+        gestionarPago();
+        alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');
     }
-}
 
-function gestionarPago() {
-    alert(nombreUsuario + ' Agrega por favor tu medio de pago:');
-    let envio = prompt('1-Efectivo -Contra entrega ($100 descuento )\n2-Tarjeta de credito ($50 recargo)\n3-Tarjeta de débito');
-    switch (envio) {
-        case '1':
-            alert('Abonas en efectivo. Tenes un descuento de $100');
-            restarTotal(100);
-            break;
-        case '2':
-            alert('Abonas con tarjeta de crédito.Tenés un recargo de $50');
-            sumarTotal(50);
-            break;
-        case '3':
-            alert('Abonas con débito!');
-            sumarTotal(0);
-            break;
-        default:
-            alert('No entendi la respueta');
-            gestionarEnvio();
-            break;
+
+
+
+
+
+
+    // FUNCIONES UTILIZADAS
+
+    function gestionarEnvio() {
+        alert(nombreUsuario + ' Agrega por favor tu método de envío:');
+        let envio = prompt('1-Envío a domicilio ... $1200\n2-retiro en el local ...Gratis!');
+        switch (envio) {
+            case '1':
+                alert('Agregaste Envío a domicilio... $ 1200');
+                sumarTotal(1200);
+                break;
+            case '2':
+                alert('Retirá por nuestro local sin costo adicional!... $ Envío Gratis!');
+                sumarTotal(0);
+                break;
+            default:
+                alert('No entendi la respueta');
+                gestionarEnvio();
+                break;
+        }
     }
-}
 
-function sumarTotal(precio) {
-    total = total + precio;
-    alert('Llevas gastado $' + total);
-}
+    function gestionarPago() {
+        alert(nombreUsuario + ' Agrega por favor tu medio de pago:');
+        let envio = prompt('1-Efectivo -Contra entrega ($100 descuento )\n2-Tarjeta de credito ($50 recargo)\n3-Tarjeta de débito');
+        switch (envio) {
+            case '1':
+                alert('Abonas en efectivo. Tenes un descuento de $100');
+                restarTotal(100);
+                break;
+            case '2':
+                alert('Abonas con tarjeta de crédito.Tenés un recargo de $50');
+                sumarTotal(50);
+                break;
+            case '3':
+                alert('Abonas con débito!');
+                sumarTotal(0);
+                break;
+            default:
+                alert('No entendi la respueta');
+                gestionarEnvio();
+                break;
+        }
+    }
 
-function restarTotal(precio) {
-    total = total - precio;
-    alert('Llevas gastado $' + total);
-}
+    function sumarTotal(precio) {
+        total = total + precio;
+        alert('Llevas gastado $' + total);
+    }
+
+    function restarTotal(precio) {
+        total = total - precio;
+        alert('Llevas gastado $' + total);
+    }
 
 
