@@ -47,15 +47,16 @@ while (mensaje == 's' || mensaje == 'S') {
         default:
             alert('Codigo inexistente');
             break;
-    }
-    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)');
-    gestionarEnvio();
-    gestionarPago();
 
-    alert('Total de la compra $' + total);
-    alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');
+    }    mensaje = prompt('Desea comprar otro producto? (s-si / n-no)');
 
+
+
+gestionarEnvio();
+gestionarPago();
 }
+alert('Muchas gracias ' + nombreUsuario + ' por tu compra. En instantes nos pondremos en contacto para finalizar tu pedido.');
+
 
 
 
