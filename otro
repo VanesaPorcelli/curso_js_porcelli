@@ -1,0 +1,13 @@
+const agregarProductos = () =>{
+    let respuesta = '';
+    
+    do{
+        let id = parseInt(prompt('Ingrese el id'));
+        let nombre = prompt('Ingrese el nombre');
+        let precio = parseFloat(prompt('Ingresa el precio'));
+        productos.push(new Producto(id,nombre,precio));
+        respuesta = prompt(`¿Quiere comprar otro producto? (SI - NO)`);
+    }while(respuesta.toLowerCase() != "no");
+
+    alert("Muchas gracias por su compra. Nos estaremos contactando para gestionar el envio.")
+}
