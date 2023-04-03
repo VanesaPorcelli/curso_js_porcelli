@@ -125,9 +125,8 @@ function agregarProductos() {
 agregarProductos();
 console.log(productos); */
 
-
+let newproduct = [];
 let agregarProducto = true;
-
 while (agregarProducto) {
     let id = parseInt(prompt('Ingrese el id'));
     let nombre = prompt('Ingrese el nombre');
@@ -140,5 +139,6 @@ while (agregarProducto) {
         agregarProducto = false;
     }
 }
+
 
 console.log(productos); // imprimir el array de productos
