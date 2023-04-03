@@ -103,7 +103,8 @@ while (respuesta != 3) {
             break;
         case 2:
             alert(`Ingresando al registro de productos...`);
-            agregarProducto();
+            agregarProductos();
+
             break;
         default:
             alert(`Opcion incorrecta!`);
@@ -124,7 +125,7 @@ function agregarProductos() {
 }
 agregarProductos();
 console.log(productos); */
-
+function agregarProductos(){
 let newproduct = [];
 let agregarProducto = true;
 while (agregarProducto) {
@@ -139,6 +140,6 @@ while (agregarProducto) {
         agregarProducto = false;
     }
 }
+}
 
-
-console.log(productos); // imprimir el array de productos
+console.table(productos); // imprimir el array de productos
