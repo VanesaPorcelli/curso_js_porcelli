@@ -65,7 +65,7 @@ const mostrarCarritoTotal = () => {
     carrito.forEach(item => {
         texto += `* ${item.nombre} - $${item.precio} \n`
     });
-    texto += `\n\nEl Subtotal es : $${calcularTotal()}`;
+    texto += `\n\nEl Total es : $${calcularTotal()}`;
     alert(texto);
 }
 
@@ -76,6 +76,29 @@ const calcularTotal = () => {
         total += producto.precio;
     })
     return total;
+}
+
+// OPCION 2 AGREGAR PRODUCTOS:
+
+function agregarProductos(){
+let newproduct = [];
+let agregarProducto = true;
+while (agregarProducto) {
+    let id = parseInt(prompt('Ingrese el id'));
+    let nombre = prompt('Ingrese el nombre del producto');
+    let precio = parseFloat(prompt('Ingresa el precio'));
+    let categoria = prompt('Ingrese la categoria');
+    
+    productos.push(new Producto(id, nombre, precio));
+
+    let continuar = prompt("¿Desea agregar otro producto? (si/no)"); 
+
+    if (continuar.toLowerCase() === "no") { 
+        agregarProducto = false;
+        alert(`Producto agregado con éxito a la base de datos...`);
+        alert('El total de productos es: ' + productos.length)
+    }
+}
 }
 
 
@@ -110,36 +133,8 @@ while (respuesta != 3) {
             alert(`Opcion incorrecta!`);
             break
     }
-    respuesta = parseInt(prompt(`Que operacion va a realizar, escriba el numero
+    respuesta = parseInt(prompt(`Qué operacion desea realizar? Indique el número:
 1 - Comprar productos.
 2 - Registrar productos.
 3 - Salir`));
 }
-
-/* //agregarproductos
-function agregarProductos() {
-    let id = parseInt(prompt('Ingrese el id'));
-    let nombre = prompt('Ingrese el nombre');
-    let precio = parseFloat(prompt('Ingresa el precio'));
-    productos.push(new Producto(id, nombre, precio));
-}
-agregarProductos();
-console.log(productos); */
-function agregarProductos(){
-let newproduct = [];
-let agregarProducto = true;
-while (agregarProducto) {
-    let id = parseInt(prompt('Ingrese el id'));
-    let nombre = prompt('Ingrese el nombre');
-    let precio = parseFloat(prompt('Ingresa el precio'));
-    productos.push(new Producto(id, nombre, precio));
-
-    let continuar = prompt("¿Desea agregar otro producto? (si/no)"); 
-
-    if (continuar.toLowerCase() === "no") { 
-        agregarProducto = false;
-    }
-}
-}
-
-console.table(productos); // imprimir el array de productos
