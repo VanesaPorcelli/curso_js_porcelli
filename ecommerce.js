@@ -47,7 +47,7 @@ const comprarProductos = () => {
 
 //ARMA LA LISTA DE PRODUCTOS
 const generarMenuProductos = () => {
-    let menu = `Estos productos tenemos para ofrecerte. Ingrese el nombre del producto:\n`
+    let menu = `Estos productos tenemos para ofrecerte.\n  Ingrese el nombre del producto:\n`
     productos.forEach(producto => {
         menu += ` ${producto.id} - ${producto.nombre} - $${producto.precio} \n`
     });
@@ -95,7 +95,7 @@ while (agregarProducto) {
 
     if (continuar.toLowerCase() === "no") { 
         agregarProducto = false;
-        alert('Producto agregado con éxito a la base de datos. \n El total actualizado es: ' + productos.length +' productos');
+        alert('Producto agregado con éxito a la base de datos. \n \n El total actualizado es: ' + productos.length +' productos');
     }
 }
 }
