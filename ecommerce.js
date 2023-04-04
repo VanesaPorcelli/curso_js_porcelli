@@ -95,8 +95,7 @@ while (agregarProducto) {
 
     if (continuar.toLowerCase() === "no") { 
         agregarProducto = false;
-        alert(`Producto agregado con éxito a la base de datos...`);
-        alert('El total de productos es: ' + productos.length)
+        alert('Producto agregado con éxito a la base de datos. \n El total actualizado es: ' + productos.length +' productos');
     }
 }
 }
@@ -125,7 +124,7 @@ while (respuesta != 3) {
             comprarProductos();
             break;
         case 2:
-            alert(`Ingresando al registro de productos...`);
+            alert(('Ingresando al registro de productos. \n \n Al momento en la base de datos hay ')+ productos.length+ " productos disponibles");
             agregarProductos();
 
             break;
